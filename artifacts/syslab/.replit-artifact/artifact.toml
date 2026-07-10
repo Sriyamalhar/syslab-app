@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "SysLab"
+version = "1.0.0"
+id = "artifacts/syslab"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25683
+
+[services.development]
+run = "pnpm --filter @workspace/syslab run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/syslab", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/syslab/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25683"
+BASE_PATH = "/"

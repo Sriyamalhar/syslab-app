@@ -1,0 +1,12 @@
+{
+  "buildCommand": "cd ../.. && pnpm run typecheck:libs && pnpm --filter @workspace/syslab run build",
+  "outputDirectory": "artifacts/syslab/dist",
+  "installCommand": "pnpm install",
+  "framework": null,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}

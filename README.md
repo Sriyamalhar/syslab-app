@@ -2,7 +2,7 @@
 
 An interactive distributed systems playground. Design architectures on a canvas, simulate traffic through them, inject failures, and watch the system respond in real time.
 
-**[Live Demo →](https://syslab-app-api-server-m3tr-fp1hc2y67-clausekeeper.vercel.app)** &nbsp;|&nbsp; **[Report Bug](https://github.com/Sriyamalhar/syslab-app/issues)**
+**[Live Demo →](https://syslab-app-api-server-m3tr.vercel.app)** &nbsp;|&nbsp; **[Report Bug](https://github.com/Sriyamalhar/syslab-app/issues)**
 
 ---
 

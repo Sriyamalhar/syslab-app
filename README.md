@@ -55,8 +55,8 @@ pnpm --filter @workspace/syslab run dev       # UI  → :5173
 
 | Service | Where | Config |
 |---|---|---|
-| Frontend | Vercel | Root dir = repo root, env: `VITE_API_URL` |
-| API | Railway / Render | Root dir = `artifacts/api-server`, env: `DATABASE_URL`, `SESSION_SECRET`, `CORS_ORIGIN` |
+| Frontend | Vercel | Root dir = repo root, env: `VITE_API_URL=https://syslab-app.onrender.com/api` |
+| API | Render | Build: `NODE_ENV=development npx --yes pnpm@10 install && npx pnpm@10 --filter @workspace/api-server run build` · Start: `node --enable-source-maps artifacts/api-server/dist/index.mjs` |
 
 ---
 

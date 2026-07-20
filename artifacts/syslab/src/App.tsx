@@ -7,6 +7,7 @@ import Login from '@/pages/Login';
 import Register from '@/pages/Register';
 import Dashboard from '@/pages/Dashboard';
 import Editor from '@/pages/Editor';
+import Demo from '@/pages/Demo';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 import { ThemeProvider } from '@/components/theme-provider';
 import { setupAuth } from '@/lib/auth';
@@ -23,6 +24,7 @@ function Router() {
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
       <Route path="/dashboard" component={Dashboard} />
+      <Route path="/demo" component={Demo} />
       <Route path="/editor/new" component={Editor} />
       <Route path="/editor/:projectId" component={Editor} />
       <Route component={NotFound} />

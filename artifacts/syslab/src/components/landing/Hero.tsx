@@ -33,7 +33,7 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Link href="/login" className="w-full sm:w-auto">
+            <Link href="/demo" className="w-full sm:w-auto">
               <Button size="lg" variant="outline" className="w-full text-base h-12 px-8">
                 View Demo
               </Button>

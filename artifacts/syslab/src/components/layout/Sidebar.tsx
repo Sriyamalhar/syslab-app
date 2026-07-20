@@ -3,14 +3,20 @@ import { useAuthStore } from '@/store/useAuthStore';
 import { SysLabLogo } from '@/components/ui/syslab-logo';
 import { Button } from '@/components/ui/button';
 import { LayoutDashboard, Library, Settings, LogOut } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 export function Sidebar() {
   const { user, logout } = useAuthStore();
   const [location, setLocation] = useLocation();
+  const { toast } = useToast();
 
   const handleLogout = () => {
     logout();
     setLocation('/login');
+  };
+
+  const handleComingSoon = (feature: string) => {
+    toast({ title: `${feature} coming soon`, description: 'This feature is on the roadmap.' });
   };
 
   return (
@@ -32,6 +38,7 @@ export function Sidebar() {
         <Button 
           variant="ghost" 
           className="w-full justify-start text-muted-foreground hover:text-foreground"
+          onClick={() => handleComingSoon('Templates')}
         >
           <Library className="mr-2 h-4 w-4" />
           Templates
@@ -39,6 +46,7 @@ export function Sidebar() {
         <Button 
           variant="ghost" 
           className="w-full justify-start text-muted-foreground hover:text-foreground"
+          onClick={() => handleComingSoon('Settings')}
         >
           <Settings className="mr-2 h-4 w-4" />
           Settings

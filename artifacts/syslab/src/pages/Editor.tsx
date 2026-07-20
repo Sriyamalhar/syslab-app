@@ -46,13 +46,15 @@ export default function Editor() {
     };
   }, [running]);
 
-  // Load project data
+  // Load project data — always reset canvas, even for empty new projects
   const loadedRef = useRef(false);
   useEffect(() => {
     if (project && !loadedRef.current) {
-      if (project.canvasData) {
-        loadCanvasData(project.canvasData as any);
-      }
+      loadCanvasData(
+        project.canvasData
+          ? (project.canvasData as any)
+          : { nodes: [], edges: [] }
+      );
       loadedRef.current = true;
     }
   }, [project, loadCanvasData]);
